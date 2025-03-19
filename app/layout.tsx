@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "./components/NavBar";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Pattern",
@@ -13,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ToastContainer />
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
